@@ -9,20 +9,20 @@ void Calculator::evaluate(QString problem)
 {
     // start thread here
     // call compute
-    Calculator::_compute(problem);
+    _compute(problem);
 }
 
 void Calculator::_compute(QString prob)
 {
     // Calculate and return solve
     float result;
-    result = Calculator::_solve(prob);
+    result = _solve(prob);
 
     QString some;
     some = QString(1);
 
     // Emit final answer
-    emit Calculator::returnAnswer("result");
+    emit returnAnswer("result");
 }
 
 float Calculator::_solve(QString prob)
@@ -30,7 +30,7 @@ float Calculator::_solve(QString prob)
     // Does the real solving
     QString p;
     if (prob.contains('%')) {
-        p = Calculator::_solve_per(prob);
+        p = _solve_per(prob);
     } else {
         p = prob;
     }
